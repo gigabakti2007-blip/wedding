@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amoura Wedding — Wedding Organizer & Planner Profesional</title>
+<meta name="description" content="Amoura Wedding adalah wedding organizer profesional yang membantu mewujudkan pernikahan impian Anda — planning, dekorasi, hingga dokumentasi. Konsultasi gratis via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+/* ============ DASAR & TOKEN DESAIN ============ */
+:root{
+  --ivory:#FBF7F0;
+  --cream:#F4EDDF;
+  --paper:#FFFDF8;
+  --gold:#B9975B;
+  --gold-2:#9E7E42;
+  --gold-soft:#E9DFC6;
+  --gold-lt:#E3C98F;
+  --rose:#C9989B;
+  --ink:#33291F;
+  --ink-2:#57503F;
+  --muted:#837763;
+  --line:#E7DECC;
+  --ease:cubic-bezier(.22,.8,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--ivory);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.15;color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--gold-soft);color:var(--ink)}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:var(--ivory)}
+::-webkit-scrollbar-thumb{background:#D8CBAF;border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+
+.container{width:min(1180px,92%);margin-inline:auto}
+section{padding:6.5rem 0;position:relative}
+
+/* Ornamen & heading */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.7rem;font-weight:500;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--gold);
+}
+.eyebrow svg{width:14px;height:14px;color:var(--rose)}
+.sec-title{font-size:clamp(2.05rem,4vw,3rem);margin:1.1rem 0 1.2rem}
+.sec-title em{font-style:italic;color:var(--gold);font-weight:500}
+.orn{width:172px;height:22px;color:var(--gold);opacity:.85;display:block}
+.sec-head{max-width:660px;margin:0 auto 3.8rem;text-align:center}
+.sec-head .orn{margin:0 auto 1.4rem}
+.sec-head p{color:var(--muted);font-size:.95rem;font-weight:300}
+
+/* Tombol */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.65rem;
+  padding:.95rem 2.3rem;border-radius:999px;border:1px solid transparent;
+  font:500 .73rem 'Poppins',sans-serif;letter-spacing:.22em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;transition:all .35s var(--ease);
+}
+.btn i{font-size:.85rem}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-2);transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(158,126,66,.6)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.btn-ghost:hover{background:var(--ivory);color:var(--ink);border-color:var(--ivory);transform:translateY(-3px)}
+.btn-outline{border-color:rgba(51,41,31,.35);color:var(--ink);background:transparent}
+.btn-outline:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink);transform:translateY(-3px)}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes float{from{transform:translateY(-7px)}to{transform:translateY(7px)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes kenburns{from{transform:scale(1.03)}to{transform:scale(1.14)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes dropLine{0%{transform:translateY(-100%)}60%,100%{transform: translateY(100%)}}
+@keyframes ripple{from{transform:scale(1);opacity:.7}to{transform:scale(1.8);opacity:0}}
+
+/* ============ NAVBAR ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:90;padding:1.15rem 0;transition:all .45s var(--ease)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{text-decoration:none;display:flex;align-items:center;gap:.65rem}
+.brand svg{width:22px;height:22px;color:var(--gold)}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:#fff;transition:color .4s}
+.brand-sub{font-size:.5rem;letter-spacing:.42em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:.3rem;transition:color .4s}
+.nav-links{display:flex;gap:2.1rem;list-style:none;align-items:center}
+.nav-links a{
+  position:relative;padding:.35rem 0;text-decoration:none;
+  font-size:.75rem;font-weight:400;letter-spacing:.17em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);transition:color .35s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease);
+}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{
+  padding:.65rem 1.6rem;border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:#fff;transition:all .35s;
+}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold)}
+.nav.scrolled{
+  background:rgba(251,247,240,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:.75rem 0;box-shadow:0 12px 34px -20px rgba(51,41,31,.35);
+}
+.nav.scrolled .brand-name{color:var(--ink)}
+.nav.scrolled .brand-sub{color:var(--muted)}
+.nav.scrolled .nav-links a{color:var(--ink-2)}
+.nav.scrolled .nav-links a:hover,.nav.scrolled .nav-links a.active{color:var(--ink)}
+.nav.scrolled .nav-cta{border-color:var(--gold);color:var(--gold-2)}
+.nav.scrolled .nav-cta:hover{background:var(--gold);color:#fff}
+
+/* Hamburger */
+.hamburger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;z-index:95}
+.hamburger span{display:block;width:24px;height:1.6px;background:#fff;margin:5.5px auto;transition:all .4s var(--ease)}
+.nav.menu-open .hamburger span{background:var(--ink)}
+.nav.menu-open span:nth-child(1){transform:translateY(7.1px) rotate(45deg)}
+.nav.menu-open span:nth-child(2){opacity:0}
+.nav.menu-open span:nth-child(3){transform:translateY(-7.1px) rotate(-45deg)}
+
+/* Menu mobile */
+.m-menu{
+  position:fixed;inset:0;z-index:85;background:var(--ivory);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;
+  opacity:0;visibility:hidden;transition:all .5s var(--ease);
+}
+.m-menu.open{opacity:1;visibility:visible}
+.m-menu a.m-link{
+  font-family:'Cormorant Garamond',serif;font-size:2.05rem;color:var(--ink);text-decoration:none;
+  opacity:0;transform:translateY(20px);transition:all .55s var(--ease);
+}
+.m-menu.open a.m-link{opacity:1;transform:none}
+.m-menu a.m-link:nth-child(1){transition-delay:.08s}.m-menu a.m-link:nth-child(2){transition-delay:.14s}
+.m-menu a.m-link:nth-child(3){transition-delay:.2s}.m-menu a.m-link:nth-child(4){transition-delay:.26s}
+.m-menu a.m-link:nth-child(5){transition-delay:.32s}.m-menu a.m-link:nth-child(6){transition-delay:.38s}
+.m-menu a.m-link:hover{color:var(--gold)}
+.m-menu .btn{opacity:0;transform:translateY(20px);transition:all .55s var(--ease) .44s}
+.m-menu.open .btn{opacity:1;transform:none}
+.m-foot{margin-top:2rem;display:flex;gap:1.6rem;color:var(--muted);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:opacity .6s .5s}
+.m-menu.open .m-foot{opacity:1}
+.m-foot a{text-decoration:none;color:var(--gold-2)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+}
+.hero-bg{position:absolute;inset:-18% 0;z-index:0;will-change:transform}
+.hero-bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 26s ease-in-out infinite alternate}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(35,27,18,.66),rgba(35,27,18,.38) 46%,rgba(35,27,18,.68));
+}
+.hero-content{position:relative;z-index:2;padding:7.5rem 1.4rem 6rem;max-width:900px}
+.hero-content>*{animation:rise 1s var(--ease) both}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:1.1rem;
+  font-size:.7rem;letter-spacing:.44em;text-transform:uppercase;color:#E9DCB9;
+  animation-delay:.15s;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,#C9AE74);display:block}
+.hero-eyebrow::after{background:linear-gradient(90deg,#C9AE74,transparent)}
+.hero h1{font-size:clamp(2.9rem,7.4vw,5.4rem);color:#fff;margin:1.5rem 0 1.4rem;animation-delay:.32s}
+.hero h1 em{display:block;font-style:italic;color:var(--gold-lt);font-weight:500}
+.hero p{max-width:580px;margin:0 auto;color:rgba(255,255,255,.85);font-weight:300;font-size:.99rem;animation-delay:.5s}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.6rem;animation-delay:.68s}
+.hero-sprig{position:absolute;z-index:2;color:rgba(241,229,202,.5);pointer-events:none;will-change:transform}
+.hero-sprig .fwrap{animation:float 7s ease-in-out infinite alternate}
+.hs-1{left:-34px;bottom:7%;width:235px}
+.hs-1 svg{transform:rotate(6deg)}
+.hs-2{right:-24px;top:11%;width:195px}
+.hs-2 .fwrap{animation-delay:1.6s}
+.hs-2 svg{transform:rotate(158deg)}
+.hero-sprig path,.hero-sprig circle{
+  stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw 2.6s var(--ease) forwards .6s;
+}
+.scroll-hint{
+  position:absolute;bottom:2.1rem;left:50%;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  color:rgba(255,255,255,.7);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;
+  animation:rise 1s var(--ease) both .9s;
+}
+.scroll-hint .line{width:1px;height:52px;background:rgba(255,255,255,.28);overflow:hidden;position:relative}
+.scroll-hint .line::after{content:"";position:absolute;inset:0;background:#fff;animation:dropLine 2.3s ease-in-out infinite}
+
+/* ============ MARQUEE ============ */
+.marquee{overflow:hidden;background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.1rem 0}
+.mq-track{display:flex;width:max-content;animation:mq 36s linear infinite}
+.mq-group{display:flex;align-items:center;gap:2.8rem;padding-right:2.8rem}
+.mq-group span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.18rem;color:var(--gold-2);white-space:nowrap}
+.mq-group svg{width:15px;height:15px;color:var(--rose);flex:none}
+
+/* ============ TENTANG ============ */
+.about-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+.about-photo{position:relative;padding:0 24px 24px 0}
+.about-photo::before{
+  content:"";position:absolute;top:24px;left:24px;right:-24px;bottom:-24px;
+  border:1px solid var(--gold);border-radius:999px 999px 16px 16px;opacity:.7;
+}
+.photo-arch{border-radius:999px 999px 16px 16px;overflow:hidden;aspect-ratio:4/5;background:var(--gold-soft)}
+.photo-arch img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.about-photo:hover .photo-arch img{transform:scale(1.05)}
+.about-sprig{position:absolute;left:-70px;top:-40px;width:210px;color:var(--gold-soft);transform:rotate(-20deg);z-index:-1}
+.badge-circle{
+  position:absolute;right:6px;bottom:-30px;width:128px;height:128px;border-radius:50%;
+  background:var(--ivory);box-shadow:0 16px 36px -18px rgba(51,41,31,.4);
+  display:grid;place-items:center;
+}
+.badge-circle svg.ring{position:absolute;inset:8px;animation:spin 22s linear infinite}
+.badge-circle svg.ring text{font:600 10.4px 'Poppins',sans-serif;letter-spacing:2.4px;fill:var(--gold-2);text-transform:uppercase}
+.badge-circle .bc-flower{width:30px;height:30px;color:var(--rose)}
+.about-copy .eyebrow{margin-bottom:.4rem}
+.about-lead{color:var(--ink-2);font-weight:300;font-size:.97rem;margin-top:1.3rem}
+.value-row{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:2.1rem}
+.value h4{font-size:1.28rem;display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.value h4::before{content:"";width:22px;height:1px;background:var(--gold);flex:none}
+.value p{font-size:.85rem;color:var(--muted);font-weight:300}
+.stats{display:flex;margin-top:2.8rem;padding-top:2.3rem;border-top:1px solid var(--line)}
+.stat{flex:1}
+.stat + .stat{border-left:1px solid var(--line);padding-left:1.8rem;margin-left:1.8rem}
+.stat .v{font-family:'Cormorant Garamond',serif;font-size:2.7rem;color:var(--gold-2);line-height:1}
+.stat .v small{font-size:1.7rem;color:var(--gold)}
+.stat small.lb{display:block;margin-top:.5rem;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+
+/* ============ LAYANAN ============ */
+.services{background:var(--paper)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.9rem 1.7rem}
+.service-card{
+  position:relative;background:var(--ivory);border:1px solid var(--line);border-radius:16px;
+  padding:2.4rem 2.1rem 2.1rem;transition:all .45s var(--ease);overflow:hidden;
+}
+.service-card:hover{background:#fff;border-color:var(--gold);box-shadow:0 30px 54px -34px rgba(51,41,31,.35);transform:translateY(-7px)}
+.s-num{
+  position:absolute;top:1rem;right:1.5rem;font-family:'Cormorant Garamond',serif;
+  font-size:3.2rem;color:#EFE6D2;line-height:1;transition:color .45s;
+}
+.service-card:hover .s-num{color:var(--gold-soft)}
+.s-icon{
+  width:52px;height:52px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);
+  display:grid;place-items:center;font-size:1.15rem;margin-bottom:1.4rem;transition:all .45s var(--ease);
+}
+.service-card:hover .s-icon{background:var(--gold);color:#fff}
+.service-card h3{font-size:1.42rem;margin-bottom:.55rem}
+.service-card p{font-size:.86rem;color:var(--muted);font-weight:300}
+.s-line{display:block;width:34px;height:1px;background:var(--gold);margin-top:1.4rem;transition:width .5s var(--ease)}
+.service-card:hover .s-line{width:64px}
+
+/* ============ GALERI ============ */
+.g-grid{columns:3;column-gap:1.4rem}
+.g-item{
+  break-inside:avoid;margin-bottom:1.4rem;position:relative;overflow:hidden;
+  border-radius:14px;cursor:pointer;background:var(--gold-soft);
+}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.g-item:hover img{transform:scale(1.07)}
+.r-45 img{aspect-ratio:4/5}.r-11 img{aspect-ratio:1/1}.r-34 img{aspect-ratio:3/4}
+.g-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:2.8rem 1.25rem 1.05rem;
+  background:linear-gradient(transparent,rgba(35,27,18,.78));color:#fff;
+  display:flex;justify-content:space-between;align-items:baseline;
+  opacity:0;transform:translateY(12px);transition:all .5s var(--ease);
+}
+.g-item:hover figcaption{opacity:1;transform:none}
+.g-item figcaption b{font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;font-size:1.22rem}
+.g-item figcaption span{font-size:.62rem;letter-spacing:.26em;opacity:.8}
+.g-zoom{
+  position:absolute;top:13px;right:13px;width:38px;height:38px;border-radius:50%;
+  background:rgba(251,247,240,.92);color:var(--ink);display:grid;place-items:center;font-size:.8rem;
+  opacity:0;transform:scale(.7);transition:all .45s var(--ease);
+}
+.g-item:hover .g-zoom{opacity:1;transform:none}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:120;background:rgba(30,23,15,.93);
+  display:flex;align-items:center;justify-content:center;padding:1.4rem;
+  opacity:0;visibility:hidden;transition:all .4s var(--ease);
+}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox figure{max-width:min(980px,90vw);text-align:center}
+.lightbox img{
+  max-width:100%;max-height:76vh;margin:0 auto;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);
+  opacity:0;transform:scale(.97);transition:all .5s var(--ease);
+}
+.lightbox img.ld{opacity:1;transform:none}
+.lightbox figcaption{margin-top:1.1rem;color:rgba(255,255,255,.88);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem}
+.lightbox figcaption span{font-family:'Poppins',sans-serif;font-style:normal;font-size:.66rem;letter-spacing:.3em;color:var(--gold-lt);margin-left:.9rem}
+.lb-btn{
+  position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:1rem;
+  cursor:pointer;transition:all .35s;display:grid;place-items:center;z-index:2;
+}
+.lb-btn:hover{background:var(--gold);border-color:var(--gold)}
+.lb-prev{left:1.4rem}.lb-next{right:1.4rem}
+.lb-close{
+  position:fixed;top:1.4rem;right:1.4rem;width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:1.05rem;
+  cursor:pointer;transition:all .35s;display:grid;place-items:center;z-index:2;
+}
+.lb-close:hover{background:var(--rose);border-color:var(--rose);transform:rotate(90deg)}
+
+/* ============ PAKET ============ */
+.packages{background:var(--cream)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;align-items:center}
+.pkg{
+  position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:2.7rem 2.3rem;display:flex;flex-direction:column;transition:all .45s var(--ease);
+}
+.pkg:hover{transform:translateY(-9px);box-shadow:0 34px 60px -36px rgba(51,41,31,.4)}
+.pkg h3{font-size:1.75rem}
+.pkg-tag{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.35rem}
+.pkg-price{margin:1.5rem 0;padding:1.2rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pkg-price small{display:block;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.pkg-price strong{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.15rem;color:var(--gold-2)}
+.pkg ul{list-style:none;margin:1.4rem 0 2rem;flex:1}
+.pkg li{display:flex;gap:.8rem;align-items:flex-start;font-size:.86rem;color:var(--ink-2);padding:.42rem 0;font-weight:300}
+.pkg li i{color:var(--gold);font-size:.72rem;margin-top:.42rem}
+.pkg .btn{width:100%}
+.pkg-feat{background:#2C231A;border-color:#2C231A;color:#F3ECDD;padding-block:3.5rem}
+.pkg-feat h3{color:#fff}
+.pkg-feat .pkg-tag{color:rgba(243,236,221,.55)}
+.pkg-feat .pkg-price{border-color:rgba(243,236,221,.16)}
+.pkg-feat .pkg-price strong{color:var(--gold-lt)}
+.pkg-feat .pkg-price small{color:rgba(243,236,221,.5)}
+.pkg-feat li{color:rgba(243,236,221,.85)}
+.pkg-feat li i{color:var(--gold-lt)}
+.pkg-badge{
+  position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#fff;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;
+  padding:.5rem 1.4rem;border-radius:999px;white-space:nowrap;
+}
+
+/* ============ TESTIMONI ============ */
+.testi{overflow:hidden}
+.testi .sprig-deco{position:absolute;left:-70px;top:60px;width:280px;color:#E8DCBE;transform:rotate(-14deg);z-index:0}
+.testi .sprig-deco.r{left:auto;right:-80px;top:auto;bottom:40px;transform:rotate(150deg)}
+.t-wrap{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
+.t-viewport{overflow:hidden}
+.t-track{display:flex;transition:transform .75s var(--ease)}
+.t-slide{min-width:100%;padding:.5rem 1rem}
+.t-photo{
+  width:86px;height:108px;border-radius:999px 999px 12px 12px;overflow:hidden;
+  margin:0 auto 1.5rem;border:1px solid var(--gold-soft);background:var(--gold-soft);
+}
+.t-photo img{width:100%;height:100%;object-fit:cover}
+.t-stars{color:var(--gold);font-size:.78rem;display:flex;gap:.3rem;justify-content:center}
+.t-quote{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:clamp(1.28rem,2.5vw,1.72rem);line-height:1.55;color:var(--ink-2);
+  max-width:660px;margin:1.3rem auto 0;
+}
+.t-name{font:600 .78rem 'Poppins',sans-serif;letter-spacing:.26em;text-transform:uppercase;margin-top:1.8rem}
+.t-meta{font-size:.72rem;color:var(--muted);letter-spacing:.06em;margin-top:.3rem}
+.t-nav{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2.6rem}
+.t-arrow{
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;
+  color:var(--ink-2);cursor:pointer;font-size:.85rem;transition:all .35s;display:grid;place-items:center;
+}
+.t-arrow:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.t-dots{display:flex;gap:.55rem}
+.t-dots button{width:8px;height:8px;border-radius:99px;border:0;background:#D9CDB2;cursor:pointer;transition:all .4s var(--ease);padding:0}
+.t-dots button.on{width:26px;background:var(--gold)}
+
+/* ============ CTA ============ */
+.cta{position:relative;overflow:hidden;text-align:center;color:#fff;padding:8.5rem 0}
+.cta-bg{position:absolute;inset:-16% 0;z-index:0;will-change:transform}
+.cta-bg img{width:100%;height:100%;object-fit:cover}
+.cta::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(32,25,16,.72),rgba(32,25,16,.5) 50%,rgba(32,25,16,.74));pointer-events:none}
+.cta-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 1.4rem}
+.cta .orn{margin:1.6rem auto}
+.cta h2{color:#fff;font-size:clamp(2.3rem,5.2vw,3.7rem)}
+.cta h2 em{font-style:italic;color:var(--gold-lt)}
+.cta p{color:rgba(255,255,255,.85);font-weight:300;margin-top:1.2rem}
+
+/* ============ KONTAK ============ */
+.contact{background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.contact .eyebrow{margin-bottom:.4rem}
+.contact .sec-title{margin-bottom:.8rem}
+.contact .lead{color:var(--muted);font-weight:300;font-size:.93rem;margin-bottom:1.8rem}
+.c-item{display:flex;gap:1.1rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.c-item .ci{
+  width:46px;height:46px;flex:none;border-radius:50%;border:1px solid var(--gold-soft);
+  display:grid;place-items:center;color:var(--gold);font-size:1rem;transition:all .35s;
+}
+.c-item:hover .ci{background:var(--gold);color:#fff;border-color:var(--gold)}
+.c-item h5{font:600 .64rem 'Poppins',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.c-item p,.c-item a{font-size:.92rem;color:var(--ink);text-decoration:none;font-weight:300}
+.c-item a:hover{color:var(--gold-2)}
+.form-card{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:clamp(1.8rem,4vw,3rem);box-shadow:0 30px 70px -50px rgba(51,41,31,.35);
+}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.35rem}
+.field label{font:500 .62rem 'Poppins',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{
+  border:0;border-bottom:1px solid #DED3BC;background:transparent;border-radius:0;
+  padding:.68rem .1rem;font:300 .92rem 'Poppins',sans-serif;color:var(--ink);
+  outline:none;transition:border-color .3s;color-scheme:light;width:100%;
+}
+.field select{
+  appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:1.5rem;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23B9975B' stroke-width='1.5'/></svg>") no-repeat right .2rem center;
+}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field .err{border-color:var(--rose)}
+.f-note{font-size:.74rem;color:var(--muted);font-style:italic;margin:-.4rem 0 1.5rem}
+
+/* ============ TOAST & FLOATING WA ============ */
+.toast{
+  position:fixed;left:50%;bottom:2.1rem;z-index:130;transform:translate(-50%,150%);
+  background:var(--ink);color:var(--ivory);padding:.95rem 1.7rem;border-radius:999px;
+  display:flex;align-items:center;gap:.75rem;font-size:.84rem;font-weight:300;
+  box-shadow:0 20px 44px -16px rgba(30,23,15,.55);transition:transform .55s var(--ease);max-width:90vw;
+}
+.toast.show{transform:translate(-50%,0)}
+.toast i{font-size:1rem}
+.wa-float{
+  position:fixed;right:1.4rem;bottom:1.4rem;z-index:80;width:57px;height:57px;border-radius:50%;
+  background:var(--ink);color:var(--ivory);display:grid;place-items:center;font-size:1.5rem;
+  box-shadow:0 16px 34px -12px rgba(40,31,23,.55);text-decoration:none;transition:all .35s var(--ease);
+}
+.wa-float:hover{background:var(--gold);transform:translateY(-4px)}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold);animation:ripple 2.6s ease-out infinite}
+.wa-float .tip{
+  position:absolute;right:70px;top:50%;transform:translate(6px,-50%);
+  background:var(--ink);color:var(--ivory);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.55rem .95rem;border-radius:8px;white-space:nowrap;opacity:0;transition:all .35s var(--ease);pointer-events:none;
+}
+.wa-float:hover .tip{opacity:1;transform:translate(0,-50%)}
+
+/* ============ FOOTER ============ */
+footer{background:#281F16;color:rgba(244,237,223,.72)}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.25fr;gap:2.6rem;padding:4.6rem 0 3.2rem}
+.f-brand .brand-name{color:#fff}
+.f-brand .brand-sub{color:rgba(244,237,223,.5)}
+.f-brand p{font-size:.85rem;font-weight:300;margin-top:1.2rem;max-width:290px;color:rgba(244,237,223,.6)}
+.f-col h6{font:600 .66rem 'Poppins',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#C9B183;margin-bottom:1.3rem}
+.f-col ul{list-style:none}
+.f-col li{margin-bottom:.55rem}
+.f-col a{font-size:.85rem;font-weight:300;text-decoration:none;color:rgba(244,237,223,.72);transition:all .3s;display:inline-block}
+.f-col a:hover{color:#fff;transform:translateX(4px)}
+.f-social{display:flex;gap:.7rem;margin-top:.3rem}
+.f-social a{
+  width:40px;height:40px;border-radius:50%;border:1px solid rgba(244,237,223,.22);
+  display:grid;place-items:center;font-size:.88rem;color:rgba(244,237,223,.8);transition:all .35s;
+}
+.f-social a:hover{background:var(--gold);border-color:var(--gold);color:#fff;transform:translateY(-3px)}
+.f-bottom{
+  border-top:1px solid rgba(244,237,223,.12);padding:1.5rem 0;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-size:.74rem;color:rgba(244,237,223,.5);
+}
+.f-bottom em{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:#C9B183}
+
+/* ============ RESPONSIVE ============ */
+@media(min-width:981px){
+  .services-grid>.reveal:nth-child(3n+2){margin-top:3rem}
+}
+@media(max-width:1080px){.nav-cta{display:none}}
+@media(max-width:980px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{max-width:460px;margin-inline:auto}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .g-grid{columns:2}
+  .pkg-grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .pkg-feat{padding-block:3rem}
+  .contact-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(min-width:681px) and (max-width:980px){
+  .services-grid>.reveal:nth-child(even){margin-top:2.4rem}
+}
+@media(max-width:680px){
+  section{padding:4.8rem 0}
+  .services-grid{grid-template-columns:1fr}
+  .value-row{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .stats{flex-direction:column;gap:1.4rem}
+  .stat + .stat{border-left:0;border-top:1px solid var(--line);padding:1.4rem 0 0;margin-left:0}
+  .f-grid{grid-template-columns:1fr;gap:2.2rem;padding:3.4rem 0 2.4rem}
+  .badge-circle{width:106px;height:106px;right:0}
+  .lb-prev{left:.5rem}.lb-next{right:.5rem}
+  .hs-1{width:170px}.hs-2{width:140px}
+}
+@media(max-width:520px){
+  .g-grid{columns:1}
+  .g-item img{aspect-ratio:4/3!important}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== SYMBOL SVG FLORAL (line-art buatan sendiri) ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="fl-flower" viewBox="0 0 40 40">
+    <g fill="none" stroke="currentColor" stroke-width="1.4">
+      <ellipse cx="20" cy="11.5" rx="4.1" ry="7"/>
+      <ellipse cx="20" cy="11.5" rx="4.1" ry="7" transform="rotate(72 20 20)"/>
+      <ellipse cx="20" cy="11.5" rx="4.1" ry="7" transform="rotate(144 20 20)"/>
+      <ellipse cx="20" cy="11.5" rx="4.1" ry="7" transform="rotate(216 20 20)"/>
+      <ellipse cx="20" cy="11.5" rx="4.1" ry="7" transform="rotate(288 20 20)"/>
+      <circle cx="20" cy="20" r="2.3" fill="currentColor" stroke="none"/>
+    </g>
+  </symbol>
+  <symbol id="fl-sprig" viewBox="0 0 220 112">
+    <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path pathLength="1" d="M6 106 C 52 94, 122 60, 214 6"/>
+      <path pathLength="1" d="M56 90 C 44 72, 50 54, 68 47 C 76 64, 70 82, 56 90 Z"/>
+      <path pathLength="1" d="M104 65 C 94 47, 100 30, 118 23 C 125 40, 119 57, 104 65 Z"/>
+      <path pathLength="1" d="M154 39 C 146 23, 152 8, 168 2 C 174 17, 168 32, 154 39 Z"/>
+      <path pathLength="1" d="M80 78 C 66 84, 50 85, 40 79 C 48 66, 66 66, 80 78 Z"/>
+      <path pathLength="1" d="M130 51 C 116 57, 100 58, 90 52 C 98 39, 116 39, 130 51 Z"/>
+      <circle pathLength="1" cx="214" cy="6" r="3"/>
+    </g>
+  </symbol>
+  <symbol id="fl-ornament" viewBox="0 0 260 24">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <line x1="0" y1="12" x2="94" y2="12"/>
+      <line x1="166" y1="12" x2="260" y2="12"/>
+      <g transform="translate(130 12)">
+        <ellipse cx="0" cy="-6" rx="3" ry="6"/>
+        <ellipse cx="0" cy="6" rx="3" ry="6"/>
+        <ellipse cx="-6" cy="0" rx="6" ry="3"/>
+        <ellipse cx="6" cy="0" rx="6" ry="3"/>
+        <circle r="1.8" fill="currentColor" stroke="none"/>
+      </g>
+      <circle cx="102" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="158" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ====== NAVBAR ====== -->
+<header class="nav" id="navbar">
+  <nav class="nav-inner container" aria-label="Navigasi utama">
+    <a href="#home" class="brand">
+      <svg aria-hidden="true"><use href="#fl-flower"/></svg>
+      <span class="brand-txt">
+        <span class="brand-name">Amoura</span>
+        <span class="brand-sub">Wedding Organizer</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-a active">Home</a></li>
+      <li><a href="#tentang" class="nav-a">Tentang Kami</a></li>
+      <li><a href="#layanan" class="nav-a">Layanan</a></li>
+      <li><a href="#galeri" class="nav-a">Galeri</a></li>
+      <li><a href="#paket" class="nav-a">Paket</a></li>
+      <li><a href="#kontak" class="nav-a">Kontak</a></li>
+    </ul>
+    <a href="#kontak" class="nav-cta">Konsultasi Gratis</a>
+    <button class="hamburger" id="menuBtn" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Menu mobile fullscreen -->
+<div class="m-menu" id="mobileMenu">
+  <a href="#home" class="m-link">Home</a>
+  <a href="#tentang" class="m-link">Tentang Kami</a>
+  <a href="#layanan" class="m-link">Layanan</a>
+  <a href="#galeri" class="m-link">Galeri</a>
+  <a href="#paket" class="m-link">Paket</a>
+  <a href="#kontak" class="m-link">Kontak</a>
+  <a href="https://wa.me/6281385429670?text=Halo%20Amoura%20Wedding!%20Saya%20ingin%20konsultasi%20pernikahan." target="_blank" rel="noopener" class="btn btn-gold">Konsultasi via WhatsApp</a>
+  <div class="m-foot">
+    <a href="https://wa.me/6281385429670" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    <span>Jakarta, ID</span>
+  </div>
+</div>
+
+<main>
+  <!-- ====== 1. HERO ====== -->
+  <section class="hero" id="home">
+    <div class="hero-bg" data-plx="0.14">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
+           alt="Pasangan pengantin berjalan di antara hamparan bunga" fetchpriority="high" data-fb>
+    </div>
+    <div class="hero-sprig hs-1" data-plx="0.05"><span class="fwrap"><svg aria-hidden="true"><use href="#fl-sprig"/></svg></span></div>
+    <div class="hero-sprig hs-2" data-plx="0.08"><span class="fwrap"><svg aria-hidden="true"><use href="#fl-sprig"/></svg></span></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Wedding Organizer &middot; Est. 2019</span>
+      <h1>Your Perfect Day, <em>Our Passion</em></h1>
+      <p>Kami membantu mewujudkan momen pernikahan impian Anda menjadi kenangan yang tak terlupakan — dari konsep pertama hingga momen paling agung di hari H.</p>
+      <div class="hero-actions">
+        <a href="#layanan" class="btn btn-gold">Lihat Layanan</a>
+        <a href="#kontak" class="btn btn-ghost">Hubungi Kami</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- Marquee editorial -->
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <div class="mq-group">
+        <span>Timeless Weddings</span><svg><use href="#fl-flower"/></svg>
+        <span>Love Stories</span><svg><use href="#fl-flower"/></svg>
+        <span>Elegant Celebrations</span><svg><use href="#fl-flower"/></svg>
+        <span>Forever Begins Here</span><svg><use href="#fl-flower"/></svg>
+        <span>Your Perfect Day</span><svg><use href="#fl-flower"/></svg>
+      </div>
+      <div class="mq-group">
+        <span>Timeless Weddings</span><svg><use href="#fl-flower"/></svg>
+        <span>Love Stories</span><svg><use href="#fl-flower"/></svg>
+        <span>Elegant Celebrations</span><svg><use href="#fl-flower"/></svg>
+        <span>Forever Begins Here</span><svg><use href="#fl-flower"/></svg>
+        <span>Your Perfect Day</span><svg><use href="#fl-flower"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 2. TENTANG KAMI ====== -->
+  <section class="about" id="tentang">
+    <div class="container about-grid">
+      <div class="about-photo reveal">
+        <svg class="about-sprig" aria-hidden="true"><use href="#fl-sprig"/></svg>
+        <div class="photo-arch">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=900&q=80"
+               alt="Tangan mempelai memegang buket bunga putih" loading="lazy" data-fb>
+        </div>
+        <div class="badge-circle" aria-hidden="true">
+          <svg class="ring" viewBox="0 0 120 120">
+            <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text><textPath href="#circ">Amoura Wedding &#183; Since 2019 &#183; Love Stories &#183;</textPath></text>
+          </svg>
+          <svg class="bc-flower"><use href="#fl-flower"/></svg>
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#fl-flower"/></svg> Tentang Kami</span>
+        <h2 class="sec-title reveal" style="--d:.08s">Merangkai Kisah Cinta <em>Menjadi Kenangan</em> Abadi</h2>
+        <svg class="orn reveal" style="--d:.14s" aria-hidden="true"><use href="#fl-ornament"/></svg>
+        <p class="about-lead reveal" style="--d:.2s">
+          Kami adalah Wedding Organizer yang hadir untuk membantu setiap pasangan menciptakan pernikahan
+          yang indah, terencana, dan berkesan. Dengan pengalaman, kreativitas, dan perhatian terhadap
+          setiap detail, kami memastikan setiap momen berjalan sesuai dengan impian Anda.
+        </p>
+
+        <div class="value-row">
+          <div class="value reveal" style="--d:.26s">
+            <h4>Visi Kami</h4>
+            <p>Menjadi mitra pernikahan yang dipercaya — menghadirkan perayaan yang personal, bermakna, dan penuh kehangatan bagi setiap pasangan.</p>
+          </div>
+          <div class="value reveal" style="--d:.34s">
+            <h4>Komitmen Kami</h4>
+            <p>Transparan dalam anggaran, presisi dalam perencanaan, dan sepenuh hati mengawal setiap detail hingga hari yang paling ditunggu.</p>
+          </div>
+        </div>
+
+        <div class="stats reveal" style="--d:.4s">
+          <div class="stat">
+            <div class="v"><span class="num" data-count="100">0</span><small>+</small></div>
+            <small class="lb">Event</small>
+          </div>
+          <div class="stat">
+            <div class="v"><span class="num" data-count="50">0</span><small>+</small></div>
+            <small class="lb">Pasangan</small>
+          </div>
+          <div class="stat">
+            <div class="v"><span class="num" data-count="5">0</span><small>+</small></div>
+            <small class="lb">Tahun Pengalaman</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 3. LAYANAN ====== -->
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#fl-flower"/></svg> Layanan Kami</span>
+        <h2 class="sec-title reveal" style="--d:.08s">Segala yang Anda Butuhkan, <em>Dirangkai dengan Cinta</em></h2>
+        <svg class="orn reveal" style="--d:.14s" aria-hidden="true"><use href="#fl-ornament"/></svg>
+        <p class="reveal" style="--d:.2s">Dari perencanaan pertama hingga tarian pertama — setiap layanan kami dirancang agar Anda cukup menikmati hari bahagia Anda.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <span class="s-num">01</span>
+          <span class="s-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+          <h3>Wedding Planning</h3>
+          <p>Membantu merencanakan seluruh kebutuhan pernikahan dari awal hingga hari H — konsep, anggaran, timeline, hingga vendor terbaik.</p>
+          <span class="s-line"></span>
+        </article>
+        <article class="service-card reveal" style="--d:.1s">
+          <span class="s-num">02</span>
+          <span class="s-icon"><i class="fa-solid fa-fan" aria-hidden="true"></i></span>
+          <h3>Wedding Decoration</h3>
+          <p>Dekorasi venue yang disesuaikan dengan tema dan keinginan pasangan — dari nuansa garden yang lembut hingga kemewahan modern.</p>
+          <span class="s-line"></span>
+        </article>
+        <article class="service-card reveal" style="--d:.2s">
+          <span class="s-num">03</span>
+          <span class="s-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
+          <h3>Wedding Organizer</h3>
+          <p>Pengelolaan dan koordinasi seluruh acara pada hari pernikahan, memastikan setiap run-down berjalan mulus tanpa Anda khawatirkan.</p>
+          <span class="s-line"></span>
+        </article>
+        <article class="service-card reveal">
+          <span class="s-num">04</span>
+          <span class="s-icon"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i></span>
+          <h3>Venue Setup</h3>
+          <p>Persiapan venue, meja, kursi, tata cahaya, dan seluruh kebutuhan acara — tertata sempurna sejak jauh sebelum tamu pertama datang.</p>
+          <span class="s-line"></span>
+        </article>
+        <article class="service-card reveal" style="--d:.1s">
+          <span class="s-num">05</span>
+          <span class="s-icon"><i class="fa-solid fa-music" aria-hidden="true"></i></span>
+          <h3>Entertainment</h3>
+          <p>Berbagai pilihan hiburan — live music, MC karismatik, hingga pertunjukan spesial — untuk membuat suasana pernikahan semakin berkesan.</p>
+          <span class="s-line"></span>
+        </article>
+        <article class="service-card reveal" style="--d:.2s">
+          <span class="s-num">06</span>
+          <span class="s-icon"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i></span>
+          <h3>Documentation</h3>
+          <p>Dokumentasi foto dan video profesional untuk mengabadikan setiap momen spesial, dari persiapan pagi hingga tarian terakhir.</p>
+          <span class="s-line"></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 4. GALERI ====== -->
+  <section class="gallery" id="galeri">
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#fl-flower"/></svg> Galeri Pernikahan</span>
+        <h2 class="sec-title reveal" style="--d:.08s">Momen-Momen yang <em>Kami Rangkai</em></h2>
+        <svg class="orn reveal" style="--d:.14s" aria-hidden="true"><use href="#fl-ornament"/></svg>
+        <p class="reveal" style="--d:.2s">Setiap pernikahan adalah kisah unik. Inilah beberapa bab yang pernah kami tulis bersama pasangan-pasangan istimewa.</p>
+      </div>
+
+      <div class="g-grid">
+        <figure class="g-item reveal r-45" tabindex="0" role="button" aria-label="Lihat foto The Ceremony lebih besar">
+          <img src="img/1.jpeg"
+               data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80"
+               alt="Upacara pernikahan di bawah lengkungan bunga" data-caption="The Ceremony" loading="lazy" data-fb>
+          <figcaption><b>The Ceremony</b><span>01</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+        <figure class="g-item reveal r-11" style="--d:.08s" tabindex="0" role="button" aria-label="Lihat foto Garden Reception lebih besar">
+          <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=80"
+               data-full="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1600&q=80"
+               alt="Jamuan makan malam di tengah taman dengan lampu gantung" data-caption="Garden Reception" loading="lazy" data-fb>
+          <figcaption><b>Garden Reception</b><span>02</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+        <figure class="g-item reveal r-34" style="--d:.16s" tabindex="0" role="button" aria-label="Lihat foto First Dance lebih besar">
+          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80"
+               data-full="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1600&q=80"
+               alt="Mempelai menari pertama kali di pelaminan" data-caption="First Dance" loading="lazy" data-fb>
+          <figcaption><b>First Dance</b><span>03</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+        <figure class="g-item reveal r-45" tabindex="0" role="button" aria-label="Lihat foto Table Setting lebih besar">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80"
+               data-full="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80"
+               alt="Tata letak meja jamuan makan di taman" data-caption="Table Setting" loading="lazy" data-fb>
+          <figcaption><b>Table Setting</b><span>04</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+        <figure class="g-item reveal r-11" style="--d:.08s" tabindex="0" role="button" aria-label="Lihat foto Bride & Groom lebih besar">
+          <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80"
+               data-full="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1600&q=80"
+               alt="Mempelai berpegangan tangan di tengah perayaan" data-caption="Bride &amp; Groom" loading="lazy" data-fb>
+          <figcaption><b>Bride &amp; Groom</b><span>05</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+        <figure class="g-item reveal r-34" style="--d:.16s" tabindex="0" role="button" aria-label="Lihat foto Outdoor Celebration lebih besar">
+          <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=80"
+               data-full="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1600&q=80"
+               alt="Pernikahan outdoor dengan buket dan kabut lembut" data-caption="Outdoor Celebration" loading="lazy" data-fb>
+          <figcaption><b>Outdoor Celebration</b><span>06</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+        <figure class="g-item reveal r-45" tabindex="0" role="button" aria-label="Lihat foto Evening Sparklers lebih besar">
+          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+               data-full="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1600&q=80"
+               alt="Mempelai dengan pertunjukan sparkler di malam hari" data-caption="Evening Sparklers" loading="lazy" data-fb>
+          <figcaption><b>Evening Sparklers</b><span>07</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+        <figure class="g-item reveal r-11" style="--d:.08s" tabindex="0" role="button" aria-label="Lihat foto Wedding Details lebih besar">
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
+               data-full="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=80"
+               alt="Detail cincin dan janji pernikahan" data-caption="Wedding Details" loading="lazy" data-fb>
+          <figcaption><b>Wedding Details</b><span>08</span></figcaption>
+          <span class="g-zoom"><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 5. PAKET ====== -->
+  <section class="packages" id="paket">
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#fl-flower"/></svg> Paket Pilihan</span>
+        <h2 class="sec-title reveal" style="--d:.08s">Pilih Cara Kami <em>Mengawal Hari Anda</em></h2>
+        <svg class="orn reveal" style="--d:.14s" aria-hidden="true"><use href="#fl-ornament"/></svg>
+        <p class="reveal" style="--d:.2s">Setiap paket dapat disesuaikan dengan kebutuhan dan anggaran Anda. Konsultasi awal selalu gratis.</p>
+      </div>
+
+      <div class="pkg-grid">
+        <article class="pkg reveal">
+          <h3>Essential</h3>
+          <span class="pkg-tag">Untuk perayaan yang intim</span>
+          <div class="pkg-price"><small>Mulai dari</small><strong>Rp 45 Juta</strong></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Wedding planning</li>
+            <li><i class="fa-solid fa-check"></i> Koordinasi acara hari-H</li>
+            <li><i class="fa-solid fa-check"></i> Basic decoration</li>
+            <li><i class="fa-solid fa-check"></i> Wedding consultation</li>
+          </ul>
+          <a class="btn btn-outline" data-wa="Halo Amoura! Saya tertarik dengan paket Essential. Boleh info lebih lanjut?" href="#">Pilih Essential</a>
+        </article>
+
+        <article class="pkg pkg-feat reveal" style="--d:.1s">
+          <span class="pkg-badge">Paling Diminati</span>
+          <h3>Premium</h3>
+          <span class="pkg-tag">Pilihan terlengkap favorit pasangan</span>
+          <div class="pkg-price"><small>Mulai dari</small><strong>Rp 85 Juta</strong></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Full wedding planning</li>
+            <li><i class="fa-solid fa-check"></i> Premium decoration</li>
+            <li><i class="fa-solid fa-check"></i> Vendor coordination</li>
+            <li><i class="fa-solid fa-check"></i> Event coordination</li>
+            <li><i class="fa-solid fa-check"></i> Wedding consultation</li>
+          </ul>
+          <a class="btn btn-gold" data-wa="Halo Amoura! Saya tertarik dengan paket Premium. Boleh info lebih lanjut?" href="#">Pilih Premium</a>
+        </article>
+
+        <article class="pkg reveal" style="--d:.2s">
+          <h3>Luxury</h3>
+          <span class="pkg-tag">Kemewahan tanpa kompromi</span>
+          <div class="pkg-price"><small>Mulai dari</small><strong>Rp 150 Juta</strong></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Full wedding management</li>
+            <li><i class="fa-solid fa-check"></i> Luxury decoration</li>
+            <li><i class="fa-solid fa-check"></i> Premium vendor</li>
+            <li><i class="fa-solid fa-check"></i> Full event coordination</li>
+            <li><i class="fa-solid fa-check"></i> Personal wedding consultant</li>
+          </ul>
+          <a class="btn btn-outline" data-wa="Halo Amoura! Saya tertarik dengan paket Luxury. Boleh info lebih lanjut?" href="#">Pilih Luxury</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 6. TESTIMONI ====== -->
+  <section class="testi" id="testimoni">
+    <svg class="sprig-deco" aria-hidden="true"><use href="#fl-sprig"/></svg>
+    <svg class="sprig-deco r" aria-hidden="true"><use href="#fl-sprig"/></svg>
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#fl-flower"/></svg> Kata Mereka</span>
+        <h2 class="sec-title reveal" style="--d:.08s">Kisah dari Pasangan <em>Yang Bahagia</em></h2>
+        <svg class="orn reveal" style="--d:.14s" aria-hidden="true"><use href="#fl-ornament"/></svg>
+      </div>
+
+      <div class="t-wrap reveal" id="tWrap">
+        <div class="t-viewport" id="tViewport">
+          <div class="t-track" id="tTrack">
+            <div class="t-slide">
+              <div class="t-photo"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=400&q=80" alt="Pasangan Rani dan Dimas" loading="lazy" data-fb></div>
+              <div class="t-stars" aria-label="Rating 5 dari 5">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="t-quote">&ldquo;Terima kasih sudah membantu membuat hari pernikahan kami menjadi begitu indah. Semua berjalan dengan sangat baik dan kami bisa menikmati acara tanpa harus khawatir dengan detailnya.&rdquo;</p>
+              <div class="t-name">Rani &amp; Dimas</div>
+              <div class="t-meta">Menikah &middot; Juni 2025 &middot; Jakarta</div>
+            </div>
+            <div class="t-slide">
+              <div class="t-photo"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=400&q=80" alt="Pasangan Sinta dan Bagas" loading="lazy" data-fb></div>
+              <div class="t-stars" aria-label="Rating 5 dari 5">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="t-quote">&ldquo;Dekorasinya melebihi ekspektasi kami. Tim Amoura sangat responsif, detail, dan selalu memberi masukan terbaik sejak pertama kali konsultasi. Sangat direkomendasikan!&rdquo;</p>
+              <div class="t-name">Sinta &amp; Bagas</div>
+              <div class="t-meta">Menikah &middot; Februari 2025 &middot; Bandung</div>
+            </div>
+            <div class="t-slide">
+              <div class="t-photo"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&q=80" alt="Pasangan Alya dan Fadhil" loading="lazy" data-fb></div>
+              <div class="t-stars" aria-label="Rating 5 dari 5">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="t-quote">&ldquo;Dari planning hingga hari H, semuanya ditangani dengan sangat profesional. Kami dan keluarga bisa benar-benar menikmati resepsi tanpa repot. Terima kasih, Amoura!&rdquo;</p>
+              <div class="t-name">Alya &amp; Fadhil</div>
+              <div class="t-meta">Menikah &middot; November 2024 &middot; Yogyakarta</div>
+            </div>
+          </div>
+        </div>
+        <div class="t-nav">
+          <button class="t-arrow" id="tPrev" aria-label="Testimoni sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="t-dots" id="tDots"></div>
+          <button class="t-arrow" id="tNext" aria-label="Testimoni berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 7. CTA ====== -->
+  <section class="cta">
+    <div class="cta-bg" data-plx="0.12">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80"
+           alt="Lampu-lampu hangat di atas perayaan malam" loading="lazy" data-fb>
+    </div>
+    <div class="cta-inner">
+      <span class="eyebrow reveal" style="color:var(--gold-lt)"><svg style="color:var(--gold-lt)" aria-hidden="true"><use href="#fl-flower"/></svg> Mulai Sekarang</span>
+      <h2 class="reveal" style="--d:.08s">Let&rsquo;s Create Your <em>Dream Wedding</em></h2>
+      <svg class="orn reveal" style="--d:.14s" aria-hidden="true"><use href="#fl-ornament"/></svg>
+      <p class="reveal" style="--d:.2s">Setiap kisah cinta memiliki cerita yang berbeda. Mari kita wujudkan cerita Anda menjadi sebuah pernikahan yang tak terlupakan.</p>
+      <div class="reveal" style="--d:.28s;margin-top:2.4rem">
+        <a class="btn btn-gold" target="_blank" rel="noopener"
+           href="https://wa.me/6281385429670?text=Halo%20Amoura%20Wedding!%20Saya%20ingin%20mulai%20konsultasi%20pernikahan%20impian%20saya.">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Mulai Konsultasi
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 8. KONTAK ====== -->
+  <section class="contact" id="kontak">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#fl-flower"/></svg> Hubungi Kami</span>
+          <h2 class="sec-title reveal" style="--d:.08s">Mari Berkenalan <em>Dengan Kisah Anda</em></h2>
+          <p class="lead reveal" style="--d:.14s">Ceritakan rencana pernikahan Anda — tim kami akan membalas dalam 1&times;24 jam pada hari kerja.</p>
+
+          <div class="c-item reveal" style="--d:.2s">
+            <span class="ci"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+            <div><h5>WhatsApp</h5><a href="https://wa.me/6281385429670" target="_blank" rel="noopener">+62 813-8542-9670</a></div>
+          </div>
+          <div class="c-item reveal" style="--d:.26s">
+            <span class="ci"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+            <div><h5>Instagram</h5><a href="https://instagram.com" target="_blank" rel="noopener">@amoura.wedding</a></div>
+          </div>
+          <div class="c-item reveal" style="--d:.32s">
+            <span class="ci"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+            <div><h5>Email</h5><a href="mailto:gigabakti2007@gmail.com">gigabakti2007@gmail.com</a></div>
+          </div>
+          <div class="c-item reveal" style="--d:.38s">
+            <span class="ci"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+            <div><h5>Alamat</h5><p>Jl. Kemang Raya No. 21, Jakarta Selatan, Indonesia 12730</p></div>
+          </div>
+          <div class="c-item reveal" style="--d:.44s">
+            <span class="ci"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+            <div><h5>Jam Operasional</h5><p>Senin &ndash; Sabtu, 09.00 &ndash; 18.00 WIB</p></div>
+          </div>
+        </div>
+
+        <div class="form-card reveal" style="--d:.15s">
+          <form id="contactForm" novalidate>
+            <div class="f-row">
+              <div class="field">
+                <label for="fNama">Nama</label>
+                <input type="text" id="fNama" name="nama" placeholder="Nama lengkap Anda" required>
+              </div>
+              <div class="field">
+                <label for="fWa">Nomor WhatsApp</label>
+                <input type="tel" id="fWa" name="whatsapp" placeholder="08xx-xxxx-xxxx" required>
+              </div>
+            </div>
+            <div class="f-row">
+              <div class="field">
+                <label for="fEmail">Email</label>
+                <input type="email" id="fEmail" name="email" placeholder="nama@email.com" required>
+              </div>
+              <div class="field">
+                <label for="fTanggal">Tanggal Pernikahan</label>
+                <input type="date" id="fTanggal" name="tanggal" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="fAcara">Jenis Acara</label>
+              <select id="fAcara" name="acara" required>
+                <option value="" selected disabled>Pilih jenis acara</option>
+                <option>Pernikahan (Wedding)</option>
+                <option>Lamaran</option>
+                <option>Tunangan / Engagement</option>
+                <option>Resepsi</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fPesan">Pesan</label>
+              <textarea id="fPesan" name="pesan" placeholder="Ceritakan sedikit tentang rencana pernikahan Anda&hellip;"></textarea>
+            </div>
+            <p class="f-note">Form ini akan mengarahkan Anda ke WhatsApp kami — tanpa spam, tanpa berbagi data.</p>
+            <button type="submit" class="btn btn-gold">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ====== 9. FOOTER ====== -->
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a href="#home" class="brand">
+          <svg aria-hidden="true"><use href="#fl-flower"/></svg>
+          <span class="brand-txt">
+            <span class="brand-name">Amoura</span>
+            <span class="brand-sub">Wedding Organizer</span>
+          </span>
+        </a>
+        <p>Wedding organizer profesional yang merangkai kisah cinta menjadi perayaan yang indah, terencana, dan tak terlupakan — sejak 2019.</p>
+      </div>
+      <div class="f-col">
+        <h6>Navigasi</h6>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#paket">Paket</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h6>Layanan</h6>
+        <ul>
+          <li><a href="#layanan">Wedding Planning</a></li>
+          <li><a href="#layanan">Wedding Decoration</a></li>
+          <li><a href="#layanan">Wedding Organizer</a></li>
+          <li><a href="#layanan">Venue Setup</a></li>
+          <li><a href="#layanan">Entertainment</a></li>
+          <li><a href="#layanan">Documentation</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h6>Ikuti Kami</h6>
+        <div class="f-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/6281385429670" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <h6 style="margin-top:1.8rem">Email</h6>
+        <a href="mailto:hello@amoura.id">hello@amoura.id</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2026 Amoura Wedding Organizer. All Rights Reserved.</span>
+      <span><em>Crafted with love</em> in Jakarta</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/6281385429670?text=Halo%20Amoura%20Wedding!" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  <span class="tip">Chat WhatsApp</span>
+</a>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <i class="fa-solid fa-circle-check" id="toastIcon" aria-hidden="true"></i>
+  <span id="toastMsg"></span>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeri foto pernikahan">
+  <button class="lb-close" id="lbClose" aria-label="Tutup galeri"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Foto sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption><em id="lbCap"></em><span id="lbCount"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Foto berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  const WA_NUMBER = '6281385429670';
+  const waLink = t => 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(t);
+
+  /* ---------- Fallback gambar (menjaga visual tetap utuh bila satu foto gagal dimuat) ---------- */
+  const FB_POOL = [
+    'photo-1519741497674-611481863552',
+    'photo-1465495976277-4387d4b0b4c6',
+    'photo-1511285560929-80b456fea0bc'
+  ];
+  document.querySelectorAll('img[data-fb]').forEach(img=>{
+    img.addEventListener('error', function(){
+      if(this.dataset.fbDone) return;
+      this.dataset.fbDone = '1';
+      const pick = FB_POOL[Math.floor(Math.random()*FB_POOL.length)];
+      this.src = 'https://images.unsplash.com/'+pick+'?auto=format&fit=crop&w=900&q=80';
+    });
+  });
+
+  /* ---------- Navbar: state scroll + menu mobile ---------- */
+  const nav = document.getElementById('navbar');
+  const menuBtn = document.getElementById('menuBtn');
+  const mMenu = document.getElementById('mobileMenu');
+
+  function toggleMenu(force){
+    const open = force !== undefined ? force : !mMenu.classList.contains('open');
+    mMenu.classList.toggle('open', open);
+    nav.classList.toggle('menu-open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  menuBtn.addEventListener('click', ()=>toggleMenu());
+  mMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>toggleMenu(false)));
+
+  /* ---------- Scrollspy + navbar state (satu handler scroll) ---------- */
+  const navAs = document.querySelectorAll('.nav-a');
+  const sections = [...document.querySelectorAll('section[id]')];
+  function setActive(id){
+    navAs.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+id));
+  }
+  const spy = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{ if(en.isIntersecting) setActive(en.target.id); });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(s=>spy.observe(s));
+
+  /* ---------- Reveal on scroll ---------- */
+  const revealIO = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('in'); revealIO.unobserve(en.target); }
+    });
+  }, {threshold:.15, rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>revealIO.observe(el));
+
+  /* ---------- Counter statistik ---------- */
+  function runCounter(el){
+    const target = +el.dataset.count, dur = 1600, t0 = performance.now();
+    (function step(now){
+      const p = Math.min((now - t0)/dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if(p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  const cntIO = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ runCounter(en.target); cntIO.unobserve(en.target); }
+    });
+  }, {threshold:.6});
+  document.querySelectorAll('.num').forEach(n=>cntIO.observe(n));
+
+  /* ---------- Parallax ringan (hero & CTA) ---------- */
+  const plxEls = [...document.querySelectorAll('[data-plx]')];
+  let ticking = false;
+  function applyScroll(){
+    // navbar state
+    nav.classList.toggle('scrolled', scrollY > 40);
+    // parallax
+    const vh = innerHeight;
+    plxEls.forEach(el=>{
+      const r = el.parentElement.getBoundingClientRect();
+      if(r.bottom > 0 && r.top < vh){
+        const sp = parseFloat(el.dataset.plx);
+        el.style.transform = 'translate3d(0,' + (-r.top * sp).toFixed(1) + 'px,0)';
+      }
+    });
+    ticking = false;
+  }
+  addEventListener('scroll', ()=>{
+    if(!ticking){ requestAnimationFrame(applyScroll); ticking = true; }
+  }, {passive:true});
+  addEventListener('resize', applyScroll);
+  applyScroll();
+
+  /* ---------- Slider testimoni ---------- */
+  const track = document.getElementById('tTrack');
+  const viewport = document.getElementById('tViewport');
+  const slides = track.children;
+  const dotsWrap = document.getElementById('tDots');
+  let idx = 0, timer = null;
+
+  for(let i=0;i<slides.length;i++){
+    const b = document.createElement('button');
+    b.setAttribute('aria-label','Testimoni '+(i+1));
+    b.addEventListener('click', ()=>{ go(i); restart(); });
+    dotsWrap.appendChild(b);
+  }
+  const dots = [...dotsWrap.children];
+  function go(i){
+    idx = (i + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (idx*100) + '%)';
+    dots.forEach((d,k)=>d.classList.toggle('on', k===idx));
+  }
+  function restart(){ clearInterval(timer); timer = setInterval(()=>go(idx+1), 6500); }
+  document.getElementById('tPrev').addEventListener('click', ()=>{ go(idx-1); restart(); });
+  document.getElementById('tNext').addEventListener('click', ()=>{ go(idx+1); restart(); });
+  const tWrap = document.getElementById('tWrap');
+  tWrap.addEventListener('mouseenter', ()=>clearInterval(timer));
+  tWrap.addEventListener('mouseleave', restart);
+  // swipe
+  let sx = 0;
+  viewport.addEventListener('touchstart', e=>{ sx = e.touches[0].clientX; }, {passive:true});
+  viewport.addEventListener('touchend', e=>{
+    const dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 45){ go(dx < 0 ? idx+1 : idx-1); restart(); }
+  }, {passive:true});
+  go(0); restart();
+
+  /* ---------- Lightbox galeri ---------- */
+  const items = [...document.querySelectorAll('.g-item')];
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  const lbCount = document.getElementById('lbCount');
+  let cur = 0;
+
+  function renderLb(){
+    const img = items[cur].querySelector('img');
+    lbImg.classList.remove('ld');
+    lbImg.onload = ()=>lbImg.classList.add('ld');
+    lbImg.src = img.dataset.full || img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = img.dataset.caption || img.alt;
+    lbCount.textContent = (cur+1) + ' / ' + items.length;
+    // preload tetangga agar transisi mulus
+    const nxt = items[(cur+1)%items.length].querySelector('img');
+    if(nxt.dataset.full) new Image().src = nxt.dataset.full;
+  }
+  function openLb(i){ cur = i; renderLb(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+  function stepLb(d){ cur = (cur + d + items.length) % items.length; renderLb(); }
+
+  items.forEach((it,i)=>{
+    it.addEventListener('click', ()=>openLb(i));
+    it.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openLb(i); } });
+  });
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  document.getElementById('lbPrev').addEventListener('click', ()=>stepLb(-1));
+  document.getElementById('lbNext').addEventListener('click', ()=>stepLb(1));
+  lb.addEventListener('click', e=>{ if(e.target === lb) closeLb(); });
+  addEventListener('keydown', e=>{
+    if(!lb.classList.contains('open')) { if(e.key==='Escape') toggleMenu(false); return; }
+    if(e.key==='Escape') closeLb();
+    if(e.key==='ArrowLeft') stepLb(-1);
+    if(e.key==='ArrowRight') stepLb(1);
+  });
+
+  /* ---------- Toast ---------- */
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  const toastIcon = document.getElementById('toastIcon');
+  let toastT;
+  function showToast(msg, type){
+    toastMsg.textContent = msg;
+    toastIcon.className = type === 'error' ? 'fa-solid fa-circle-exclamation' : 'fa-solid fa-circle-check';
+    toastIcon.style.color = type === 'error' ? '#E2A79E' : '#B7CFA0';
+    toast.classList.add('show');
+    clearTimeout(toastT);
+    toastT = setTimeout(()=>toast.classList.remove('show'), 3800);
+  }
+
+  /* ---------- Form kontak → WhatsApp ---------- */
+  const form = document.getElementById('contactForm');
+  const dateInput = document.getElementById('fTanggal');
+  dateInput.min = new Date().toISOString().split('T')[0];
+
+  form.querySelectorAll('input,select,textarea').forEach(f=>{
+    f.addEventListener('input', ()=>f.classList.remove('err'));
+  });
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(f=>{
+      const bad = !f.value.trim() || (f.type==='email' && !/^\S+@\S+\.\S+$/.test(f.value));
+      f.classList.toggle('err', bad);
+      if(bad) ok = false;
+    });
+    if(!ok){ showToast('Mohon lengkapi kolom yang ditandai dengan benar.', 'error'); return; }
+    const d = Object.fromEntries(new FormData(form));
+    let tgl = d.tanggal;
+    try{
+      tgl = new Date(d.tanggal + 'T00:00:00').toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'});
+    }catch(_){}
+    const lines = [
+      'Halo Amoura Wedding!',
+      'Saya ' + d.nama + ' ingin berkonsultasi pernikahan.',
+      '',
+      'Tanggal Pernikahan : ' + tgl,
+      'Jenis Acara        : ' + d.acara,
+      'Email              : ' + d.email,
+      '',
+      'Pesan: ' + (d.pesan ? d.pesan : '-')
+    ].join('\n');
+    window.open(waLink(lines), '_blank');
+    showToast('Terima kasih, ' + d.nama.split(' ')[0] + '! Kami mengarahkan Anda ke WhatsApp.');
+    form.reset();
+  });
+
+  /* ---------- Tombol paket → WhatsApp ---------- */
+  document.querySelectorAll('[data-wa]').forEach(a=>{
+    a.addEventListener('click', e=>{ e.preventDefault(); window.open(waLink(a.dataset.wa), '_blank'); });
+  });
+})();
+</script>
+</body>
+</html>
